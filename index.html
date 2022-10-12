@@ -1,10 +1,9 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <title></title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div class="blog">
@@ -13,14 +12,21 @@
         <main class="wrapper">
           <aside class="sidebar">
             <h2 class="section-title">All posts</h2>
-            <ul class="list titles"></ul>
+            <ul class="list titles">
+              <script
+                id="template-article-link"
+                type="text/x-handlebars-template"
+              >
+                <li><a href="#{{id}}"><span>{{title}}</span></a></li>
+              </script>
+            </ul>
           </aside>
           <section class="posts">
             <article
-              class="post active"
+              class="post"
               id="article-1"
-              data-tags="cat cactus scissors"
-              data-author="john"
+              data-tags="news design"
+              data-author="Marion Berry"
             >
               <h3 class="post-title">Article 1</h3>
               <p class="post-author"></p>
@@ -55,8 +61,8 @@
             <article
               class="post"
               id="article-2"
-              data-tags="blow brown stir"
-              data-author="andrew"
+              data-tags="news design code"
+              data-author="Theo Tabby"
             >
               <h3 class="post-title">Article 2</h3>
               <p class="post-author"></p>
@@ -92,8 +98,8 @@
             <article
               class="post"
               id="article-3"
-              data-tags="clearance member production"
-              data-author="mark"
+              data-tags="news design reviews"
+              data-author="George Tuxedo"
             >
               <h3 class="post-title">Article 3</h3>
               <p class="post-author"></p>
@@ -124,10 +130,8 @@
             <article
               class="post"
               id="article-4"
-              data-tags="definite
-            breakfast
-            terms"
-              data-author="Frank"
+              data-tags="news reviews tutorials"
+              data-author="Kitty Toebean"
             >
               <h3 class="post-title">Article 4</h3>
               <p class="post-author"></p>
@@ -160,10 +164,8 @@
             <article
               class="post"
               id="article-5"
-              data-tags="cereal
-            central
-            harmful"
-              data-author="Ian"
+              data-tags="code reviews tutorials"
+              data-author="Marion Berry"
             >
               <h3 class="post-title">Article 5</h3>
               <p class="post-author"></p>
@@ -195,10 +197,8 @@
             <article
               class="post"
               id="article-6"
-              data-tags="skip
-            quotation
-            highlight"
-              data-author="Pamela"
+              data-tags="design reviews tutorials"
+              data-author="George Tuxedo"
             >
               <h3 class="post-title">Article 6</h3>
               <p class="post-author"></p>
@@ -232,10 +232,8 @@
             <article
               class="post"
               id="article-7"
-              data-tags="put
-            apology
-            expertise"
-              data-author="Kitty"
+              data-tags="news reviews code"
+              data-author="Kitty Toebean"
             >
               <h3 class="post-title">Article 7</h3>
               <p class="post-author"></p>
@@ -268,10 +266,8 @@
             <article
               class="post"
               id="article-8"
-              data-tags="definite
-            breakfast
-            terms"
-              data-author="Mark"
+              data-tags="news design tutorials"
+              data-author="Theo Tabby"
             >
               <h3 class="post-title">Article 8</h3>
               <p class="post-author"></p>
@@ -305,13 +301,11 @@
             <article
               class="post"
               id="article-9"
-              data-tags="explode
-            discovery
-            conscience"
-              data-author="Ian"
+              data-tags="news reviews code"
+              data-author="Marion Berry"
             >
               <h3 class="post-title">Article 9</h3>
-              <p class="post-author">/p></p>
+              <p class="post-author"></p>
               <div class="post-content">
                 <p>
                   Tam et facilisis purus. Donec vulputate est quis lobortis
@@ -343,10 +337,8 @@
             <article
               class="post"
               id="article-10"
-              data-tags="explode
-            discovery
-            conscience"
-              data-author="George"
+              data-tags="code design tutorials"
+              data-author="George Tuxedo"
             >
               <h3 class="post-title">Article 10</h3>
               <p class="post-author"></p>
@@ -386,36 +378,30 @@
             <h2 class="section-title">Tags</h2>
             <ul class="list tags"></ul>
             <h2 class="section-title">Authors</h2>
-            <ul class="list authors">
-              <li>
-                <a href="#">
-                  <span class="author-name">Kitty Toebean</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="author-name">Theo Tabby</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="author-name">George Tuxedo</span>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="author-name">Marion Berry</span>
-                </a>
-              </li>
-            </ul>
+            <ul class="list authors"></ul>
           </aside>
         </main>
       </div>
     </div>
-    <script id="template-article-link" type="text/x-handlebars-template">
+    <script id="template-tag-link" type="text/x-handlebars-template">
       <li><a href="#{{id}}"><span>{{title}}</span></a></li>
     </script>
+    <script id="template-author-link" type="text/x-handlebars-template">
+      <li><a href="#{{id}}"><span>{{title}}</span></a></li>
+    </script>
+    <script id="template-tag-cloud-link" type="text/x-handlebars-template">
+      {{#each tags}}
+        <li><a href="#tag-{{tag}}" class="{{className}}"><span>{{tag}}
+              ({{count}})</span></a></li>
+      {{/each}}
+    </script>
+    <script id="template-author-cloud-link" type="text/x-handlebars-template">
+      {{#each authors}}
+        <li><a href="#author-{{author}}"><span>{{author}}
+              ({{count}})</span></a></li>
+      {{/each}}
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
-    <script src="js/new.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

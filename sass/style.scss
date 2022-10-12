@@ -1,22 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext");
-
 /* Variables */
-
 $color-light: #fff;
 $color-dark: #444;
-
 $font-logo: "Sacramento", cursive;
 $font-header: "Oswald", sans-serif;
 $font-text: "Source Sans Pro", sans-serif;
-
 /* Global */
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-
 body {
   background: $color-light;
   font-family: $font-text;
@@ -25,12 +19,10 @@ body {
   font-size: 16px;
   line-height: 1.7;
 }
-
 .container {
   max-width: 1140px;
   margin: 0 auto;
 }
-
 .section-title {
   font-size: 22px;
   text-transform: uppercase;
@@ -42,9 +34,7 @@ body {
     color: lighten($color-dark, 20%);
   }
 }
-
 /* Layout */
-
 .wrapper {
   display: flex;
   margin-left: 10px;
@@ -53,11 +43,9 @@ body {
 .sidebar {
   flex: 1 0 0;
 }
-
 .posts {
   flex: 2 0 0;
 }
-
 .sidebar,
 .posts {
   background: $color-light;
@@ -76,48 +64,69 @@ body {
   line-height: 1;
   text-align: center;
 }
-
 /* Lists */
-
 .list {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  display: inline;
   .active {
     font-weight: bold;
   }
 }
-
 .list-horizontal {
   li {
     display: inline-block;
   }
 }
-
 /* Authors */
-
 .authors {
   li {
     margin-bottom: 12px;
   }
 }
-
 /* Post */
-
 .post {
   display: none;
   &.active {
     display: block;
   }
 }
-
 .post-author {
   font-style: italic;
 }
-
 .post-tags {
   display: flex;
   p {
     margin: 0 10px 0 0;
   }
+}
+
+.tag-size-1 {
+  font-size: 100%;
+}
+.tag-size-2 {
+  font-size: 130%;
+  color: #40739e;
+}
+
+.tag-size-3 {
+  font-size: 150%;
+  color: #273c75;
+}
+
+.tag-size-4 {
+  font-size: 170%;
+  color: #8c7ae6;
+}
+
+.tag-size-5 {
+  font-size: 190%;
+  color: #4cd137;
+}
+
+.list.tags {
+  display: flex;
+  flex: auto;
+  flex-wrap: wrap;
 }
